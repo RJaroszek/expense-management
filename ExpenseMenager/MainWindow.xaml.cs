@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
+using ExpenseMenager.SimpleClasses;
+
 namespace ExpenseMenager
 {
     /// <summary>
@@ -23,6 +27,25 @@ namespace ExpenseMenager
         public MainWindow()
         {
             InitializeComponent();
+
+            InitialMainView();
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Nowy \n i chuj!");
+        }
+
+        private void InitialMainView()
+        {
+            var mainList = new List<ExpenseEntity>();
+
+            mainList.Add(new ExpenseEntity());
+            mainList.Add(new ExpenseEntity("Dupa", 0.59));
+            mainList.Add(new ExpenseEntity());
+
+            dataSheet.ItemsSource = mainList;
+
         }
     }
 }
