@@ -33,7 +33,7 @@ namespace ExpenseMenager
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Nowy \n i chuj!");
+            MessageBox.Show("Nowy \n i kuj!");
         }
 
         private void InitialMainView()
@@ -46,6 +46,21 @@ namespace ExpenseMenager
 
             dataSheet.ItemsSource = mainList;
 
+            var monthList = new List<string>();
+
+            monthList.Add("Styczen");
+            monthList.Add("Luty");
+            monthList.Add("Marzec");
+            monthList.Add("Kwiecien");
+            monthList.Add("Maj");
+
+            monthSet.ItemsSource = monthList;
+
+        }
+
+        private void NewMonthButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("New month!!! xD");
         }
     }
 }

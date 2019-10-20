@@ -17,7 +17,7 @@
 
         <Grid Margin="5">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="1*"/>
                 <RowDefinition Height="10*"/>
                 <RowDefinition Height="100"/>
             </Grid.RowDefinitions>
@@ -27,21 +27,40 @@
                 <ColumnDefinition Width="9*" />
             </Grid.ColumnDefinitions>
 
+            <!--"New month" button-->
+            <Button Grid.Row="0" Grid.Column="0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Name="newMonthButton" 
+                    BorderThickness="20"
+                    Click="NewMonthButton_Click"
+                    FontWeight="Bold"
+                    Foreground="Blue">
+                <TextBlock TextWrapping="Wrap"
+                           TextAlignment="Center">
+                    Dodaj nowy miesiac!
+                </TextBlock>
+            </Button>
+            
+            <!--List of the months-->
+            <ListView Grid.Row="1" Grid.Column="0"
+                      Name="monthSet"/>
+
+            <!--Place where values will be put-->
+            <DataGrid Grid.Row="1" Grid.Column="1" 
+                      Name="dataSheet" />
+            
+            <!--Place for chart-->
+            <Border Grid.Row="1" Grid.Column="2" Background="Azure" BorderBrush="DodgerBlue"
+                    BorderThickness="5" CornerRadius="10">
+                <!--Border here is backgroud for image!!-->
+                <Image Stretch="Fill"/>
+            </Border>
 
             <Label Grid.Row="2" Grid.Column="0" 
                    FontSize="15">
                 Test label
             </Label>
-
-            <DataGrid Grid.Row="1" Grid.Column="1" 
-                      Name="dataSheet" />
-
-            <Border Grid.Row="1" Grid.Column="2" Background="Azure" BorderBrush="DodgerBlue"
-                    BorderThickness="5,5,5,5" CornerRadius="10">
-                <!--Border here is backgroud for image!!-->
-                <Image Stretch="Fill"/>
-            </Border>
-            
 
         </Grid>
     </DockPanel>
